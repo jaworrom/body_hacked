@@ -1,6 +1,5 @@
-<h1>Editing hack_tip</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @hack_tip %> |
-<%= link_to 'Back', hack_tips_path %>
+<%- model_class = HackTip -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => HackTip %></h1>
+</div>
+<%= render :partial => 'form' %>

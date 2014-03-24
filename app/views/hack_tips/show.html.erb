@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = HackTip -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => HackTip %></h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @hack_tip.title %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @hack_tip.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @hack_tip.description %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @hack_tip.description %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              hack_tips_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_hack_tip_path(@hack_tip), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              hack_tip_path(@hack_tip),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @hack_tip.user %>
-</p>
-
-<%= link_to 'Edit', edit_hack_tip_path(@hack_tip) %> |
-<%= link_to 'Back', hack_tips_path %>
