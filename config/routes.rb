@@ -1,4 +1,5 @@
 BodyHacked::Application.routes.draw do
+  get "landings/index"
   resources :hack_tips do
   #->Prelang (voting/acts_as_votable)
   member do
