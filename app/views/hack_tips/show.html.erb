@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @hack_tip.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hack_tip.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hack_tip.user %>
+</p>
+
+<%= link_to 'Edit', edit_hack_tip_path(@hack_tip) %> |
+<%= link_to 'Back', hack_tips_path %>
